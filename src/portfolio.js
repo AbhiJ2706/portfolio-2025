@@ -7,6 +7,7 @@ import {
   TextField,
   InputAdornment,
   Chip,
+  Link,
   Box,
   Grid,
   Paper,
@@ -18,8 +19,13 @@ import {
   Tabs,
   Tab
 } from '@mui/material';
+import LaunchIcon from '@mui/icons-material/Launch';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import EmailIcon from '@mui/icons-material/Email';
+import TwitterIcon from '@mui/icons-material/Twitter';
 import { Search } from 'lucide-react';
-import Figtree from './Figtree-Medium.ttf';
+// import Figtree from '/fonts/Figtree-Medium.ttf';
 import ResumeData from './resume.json'
 
 const BLUE = "#47c2f3"
@@ -51,7 +57,7 @@ const darkTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'Figtree',
+    fontFamily: ['Figtree', '-apple-system', 'BlinkMacSystemFont'].join(","),
     h1: {
       fontWeight: 700,
       background: BLUE,
@@ -65,18 +71,18 @@ const darkTheme = createTheme({
     },
   },
   components: {
-    MuiCssBaseline: {
-    styleOverrides: `
-        @font-face {
-        font-family: 'Raleway';
-        font-style: normal;
-        font-display: swap;
-        font-weight: 400;
-        src: local('Raleway'), local('Raleway-Regular'), url(${Figtree}) format('ttf');
-        unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF;
-        }
-    `,
-    },
+    // MuiCssBaseline: {
+    //     styleOverrides: `
+    //     @font-face {
+    //     font-family: 'Figtree';
+    //     font-style: normal;
+    //     font-display: swap;
+    //     font-weight: 400;
+    //     src: url(${Figtree}) format('ttf');
+    //     unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF;
+    //     }
+    // `,
+    // },
     MuiCard: {
       styleOverrides: {
         root: {
@@ -135,10 +141,12 @@ const Portfolio = () => {
   // Sample data - replace with your actual data
   const experienceData = useMemo(() => ResumeData.sections[0].items, []);
   const extracurricularData = useMemo(() => ResumeData.sections[1].items, []);
+  const projectsData = useMemo(() => ResumeData.sections[2].items, []);
 
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredExperienceData, setFilteredExperienceData] = useState(experienceData);
   const [filteredExtracurricularData, setFilteredExtracurricularData] = useState(extracurricularData);
+  const [filteredProjectsData, setFilteredProjectsData] = useState(projectsData);
   const [activeTab, setActiveTab] = useState(0);
 
   // Extract all unique skills
@@ -152,14 +160,19 @@ const Portfolio = () => {
       exp.core_skills.forEach(skill => skills.add(skill));
       exp.extra_skills.forEach(skill => skills.add(skill));
     });
+    projectsData.forEach(exp => {
+        exp.core_skills.forEach(skill => skills.add(skill));
+        exp.extra_skills.forEach(skill => skills.add(skill));
+    });
     return Array.from(skills).slice(0, 12); // Show first 12 skills
-  }, [experienceData, extracurricularData]);
+  }, [experienceData, extracurricularData, projectsData]);
 
   // Filter experiences based on search query
   useEffect(() => {
     if (!searchQuery.trim()) {
       setFilteredExperienceData(experienceData);
       setFilteredExtracurricularData(extracurricularData);
+      setFilteredProjectsData(projectsData);
       return;
     }
 
@@ -192,9 +205,21 @@ const Portfolio = () => {
   
         return searchTerms.every(term => searchableText.includes(term));
       });
+    
+    const filteredProjects = projectsData.filter(exp => {
+        const searchableText = [
+            exp.name,
+            ...exp.core_skills,
+            ...exp.extra_skills,
+            ...exp.description.map(d => d.summary)
+        ].join(' ').toLowerCase();
+
+        return searchTerms.every(term => searchableText.includes(term));
+    });
 
     setFilteredExperienceData(filteredExperience);
     setFilteredExtracurricularData(filteredExtracurriculars);
+    setFilteredProjectsData(filteredProjects);
   }, [searchQuery]);
 
   const handleSkillClick = (skill) => {
@@ -219,6 +244,19 @@ const Portfolio = () => {
           <CardContent sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
             {/* Header section - centered */}
             <Box sx={{ textAlign: 'center', mb: 3 }}>
+              {experience.name ? (
+                <Box sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 1 }}>
+                    <Typography variant="h6" component="h3" color="primary" fontWeight="bold" gutterBottom>
+                        {experience.name}
+                    </Typography>
+                    <Link href={experience.source} underline="hover">
+                        <LaunchIcon fontSize='small' />
+                    </Link>
+                </Box>
+              ) : (
+                <></>
+              )}
+
               <Typography variant="h6" component="h3" color="primary" fontWeight="bold" gutterBottom>
                 {experience.organization}
               </Typography>
@@ -227,34 +265,32 @@ const Portfolio = () => {
                 {experience.position}
               </Typography>
               
-              <Typography variant="body1" sx={{ color: BLUE, fontWeight: 'medium', mb: 2 }}>
-                {experience.domain}
-              </Typography>
+              {experience.start ? (
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 1 }}>
+                    <Typography variant="body2" color="text.secondary">
+                        {experience.start} - {experience.end}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                        {experience.location}
+                    </Typography>
+                </Box>
+              ) : (
+                <></>
+              )}
               
-              <Box sx={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 1 }}>
-                <Typography variant="body2" color="text.secondary">
-                  {experience.start} - {experience.end}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {experience.location}
-                </Typography>
-              </Box>
             </Box>
 
             {/* Description section - left aligned */}
             <Box sx={{ textAlign: 'left', mb: 3, flexGrow: 1 }}>
               <Box component="ul" sx={{ pl: 2, m: 0 }}>
-                {experience.description.map((desc, idx) => (
-                  <Typography 
-                    key={idx} 
-                    component="li" 
+                <Typography 
+                    key={experience.organization} 
                     variant="body2" 
                     color="text.secondary" 
                     sx={{ lineHeight: 1.6, mb: 1 }}
-                  >
-                    {desc.summary}
-                  </Typography>
-                ))}
+                    >
+                    {experience.long_description}
+                </Typography>
               </Box>
             </Box>
 
@@ -321,76 +357,28 @@ const Portfolio = () => {
               </Typography>
               <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
                 <Button
-                  variant="outlined"
                   href="https://github.com/abhij2706"
                   target="_blank"
                   rel="noopener noreferrer"
-                  sx={{
-                    borderRadius: '20px',
-                    backgroundColor: 'rgba(55, 65, 81, 0.8)',
-                    backdropFilter: 'blur(8px)',
-                    border: '1px solid rgba(107, 114, 128, 0.4)',
-                    color: '#e5e7eb',
-                    transition: 'all 0.3s ease',
-                    px: 3,
-                    py: 1,
-                    '&:hover': {
-                      background: 'linear-gradient(45deg, #333, #555)',
-                      color: 'white',
-                      transform: 'scale(1.05)',
-                      border: '1px solid transparent',
-                    },
-                  }}
                 >
-                  GitHub
+                  <GitHubIcon fontSize='large'></GitHubIcon>
                 </Button>
                 
                 <Button
-                  variant="outlined"
                   href="https://linkedin.com/in/abhij2706"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{
-                    borderRadius: '20px',
-                    backgroundColor: 'rgba(55, 65, 81, 0.8)',
-                    backdropFilter: 'blur(8px)',
-                    border: '1px solid rgba(107, 114, 128, 0.4)',
-                    color: '#e5e7eb',
-                    transition: 'all 0.3s ease',
-                    px: 3,
-                    py: 1,
-                    '&:hover': {
-                      background: 'linear-gradient(45deg, #0077b5, #005885)',
-                      color: 'white',
-                      transform: 'scale(1.05)',
-                      border: '1px solid transparent',
-                    },
-                  }}
                 >
-                  LinkedIn
+                  <LinkedInIcon fontSize='large'/>
                 </Button>
                 
                 <Button
-                  variant="outlined"
                   href="mailto:a252jain@uwaterloo.ca"
-                  sx={{
-                    borderRadius: '20px',
-                    backgroundColor: 'rgba(55, 65, 81, 0.8)',
-                    backdropFilter: 'blur(8px)',
-                    border: '1px solid rgba(107, 114, 128, 0.4)',
-                    color: '#e5e7eb',
-                    transition: 'all 0.3s ease',
-                    px: 3,
-                    py: 1,
-                    '&:hover': {
-                      background: 'linear-gradient(45deg, #dc2626, #991b1b)',
-                      color: 'white',
-                      transform: 'scale(1.05)',
-                      border: '1px solid transparent',
-                    },
-                  }}
                 >
-                  Email
+                  <EmailIcon fontSize='large'/>
+                </Button>
+
+                <Button>
+                  <TwitterIcon fontSize='large'/>
                 </Button>
               </Box>
             </Paper>
@@ -400,7 +388,7 @@ const Portfolio = () => {
           <Fade in={true} timeout={1200}>
             <Paper elevation={1} sx={{ p: 4, mb: 4 }}>
               <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.7, marginBottom: '3vh' }}>
-                Use the search below to explore my experience and extracurriculars by skills, organizations, or any keywords that interest you.
+                Use the search below to explore my experience and extracurriculars by skills, organizations, or any keywords that interest you. Or, scroll down to see all my experience!
               </Typography>
               <TextField
                 fullWidth
@@ -465,6 +453,7 @@ const Portfolio = () => {
                 >
                     <Tab label="Experience" />
                     <Tab label="Extracurriculars" />
+                    <Tab label="Projects" />
                 </Tabs>
             </Paper>
           </Fade>
@@ -497,7 +486,7 @@ const Portfolio = () => {
                 </Paper>
               </Fade>
             )
-          ) : (
+          ) : activeTab === 1 ? (
             // Extracurriculars Tab
             filteredExtracurricularData.length > 0 ? (
               <Grid container spacing={3} sx={{ justifyContent: 'center' }}>
@@ -522,6 +511,32 @@ const Portfolio = () => {
                   </Typography>
                 </Paper>
               </Fade>
+            )
+          ) : (
+            // Extracurriculars Tab
+            filteredProjectsData.length > 0 ? (
+                <Grid container spacing={3} sx={{ justifyContent: 'center' }}>
+                    {filteredProjectsData.map((experience, index) => (
+                    <Grid item xs={12} key={index}>
+                        <ExperienceCard experience={experience} index={index} />
+                    </Grid>
+                    ))}
+                </Grid>
+            ) : (
+                <Fade in={true} timeout={500}>
+                    <Paper 
+                    elevation={20} 
+                    sx={{ 
+                        textAlign: 'center', 
+                        py: 8, 
+                        px: 4,
+                    }}
+                    >
+                    <Typography variant="h5" color="text.secondary">
+                        No extracurriculars match your search criteria
+                    </Typography>
+                    </Paper>
+                </Fade>
             )
           )}
         </Container>

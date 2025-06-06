@@ -54,7 +54,8 @@
                             "required_skills": [],
                             "group": 0
                         }
-                    ]
+                    ],
+                    "long_description": "Currently working on developing an advanced detection system for cryptocurrency pump-and-dump schemes by leveraging machine learning techniques to analyze market sentiment and price patterns. This research involves implementing sophisticated algorithms using Python, TensorFlow, and PyTorch to identify fraudulent trading activities in cryptocurrency markets."
                 },
                 {
                     "organization": "BetterUp",
@@ -101,7 +102,8 @@
                             "required_skills": ["Terraform"],
                             "group": 0
                         }
-                    ]
+                    ],
+                    "long_description": "Spearheaded the development of machine learning applications for analyzing coaching session transcripts, creating deep learning models that extracted valuable insights for over 1 million users and delivered actionable analytics to BetterUp's partners. Additionally, engineered robust data processing infrastructure using Terraform, Python, and cloud technologies like AWS and Kubernetes, which automated critical monitoring tasks and saved engineering teams over 1000 hours of manual work."
                 },
                 {
                     "organization": "Amazon",
@@ -109,7 +111,7 @@
                     "position": "Software Development Engineering Intern",
                     "domain": "Software Engineering",
                     "start": "May 2024",
-                    "end": "August 2024",
+                    "end": "August 2024",  
                     "core_skills": [
                         "Kotlin",
                         "Typescript",
@@ -137,7 +139,8 @@
                             "required_skills": ["Kotlin", "Typescript"],
                             "group": 0
                         }
-                    ]
+                    ],
+                    "long_description": "Developed innovative software solutions using Kotlin, TypeScript, and AWS, including an LLM-powered natural language to database query assistant that improved data retrieval efficiency by 10x and a Slack integration app that streamlined lead delivery for over 1000 employees. Also contributed to backend architecture improvements by refactoring core components of Amazon's lead retrieval platform, resulting in a 30% reduction in development time for new services."
                 },
                 {
                     "organization": "University of Waterloo",
@@ -158,7 +161,8 @@
                             "required_skills": [],
                             "group": 0
                         }
-                    ]
+                    ],
+                    "long_description": "Built a comprehensive testing framework for large language models using Swift and CoreML to systematically evaluate model performance in natural language processing tasks. Conducted extensive research by implementing and testing over 10 different LLMs in a unified pipeline specifically designed for unsupervised topic modeling of social media content."
                 },
                 {
                     "organization": "Qualcomm",
@@ -198,7 +202,8 @@
                             "required_skills": ["Python", "NumPy", "Pandas"],
                             "group": 0
                         }
-                    ]
+                    ],
+                    "long_description": "Architected and developed a comprehensive software profiling pipeline using Python and Bash to analyze CNN performance on Snapdragon processors, achieving over 500% improvement in analysis tool efficiency and enabling precise nanosecond-level performance monitoring. Created sophisticated data management systems including caching mechanisms and time-based search engines that could handle datasets with 50,000+ data points, significantly enhancing Qualcomm's ability to optimize AI workloads on mobile hardware."
                 },
                 {
                     "organization": "Qualcomm",
@@ -245,7 +250,8 @@
                             "required_skills": ["C++"],
                             "group": 0
                         }
-                    ]
+                    ],
+                    "long_description": "Developed critical embedded software infrastructure using C++, C, and Python, focusing on improving debugging capabilities for over 40 engineers and implementing data transmission features with comprehensive thread-safety testing for Android-based systems. Built advanced performance analysis tools including ELT pipelines and measurement infrastructure for ML-based image processing, achieving 50% improvement in Inter-Process Communication efficiency through data-driven optimization techniques."
                 },
                 {
                     "organization": "Cisco Systems",
@@ -285,7 +291,8 @@
                             "required_skills": ["Python"],
                             "group": 0
                         }
-                    ]
+                    ],
+                    "long_description": "Built and deployed machine learning systems using Python, NumPy, and Pandas, including a sophisticated recommendation system that matched code reviewers to pull requests for over 3600 users and optimized NLU pipelines that achieved 99% accuracy in customer service chatbots. Implemented significant cost-saving DevOps improvements through Docker optimization and API development, reducing memory usage by over 90% (saving $35,000+ annually) and accelerating chatbot development workflows by 2x."
                 },
                 {
                     "organization": "Cisco Systems",
@@ -328,10 +335,12 @@
                             "required_skills": ["Python"],
                             "group": 0
                         }
-                    ]
+                    ],
+                    "long_description": "Developed advanced machine learning solutions using Python and TensorFlow, including an RNN-based anomaly detection model for router telemetry data and comprehensive test automation frameworks for network infrastructure. Created robust API systems to collect and process over 60 SRv6 telemetry metrics while implementing automated testing pipelines for multiple network features, significantly improving Cisco's network testing and monitoring capabilities."
                 }
             ]
-        }, {
+        }, 
+        {
             "name": "extracurriculars",
             "include": false,
             "num_top_points": 2,
@@ -354,7 +363,8 @@
                             "required_skills": [],
                             "group": 0
                         }
-                    ]
+                    ],
+                    "long_description": "Designed and constructed a 2-wheeled autonomous robot during a competitive hackathon, integrating hardware and software components for mobility and control. Implemented an intelligent voice command processing system using Python, LLMs, and ROS that could interpret natural language instructions and translate them into precise driving and steering commands for real-time robot navigation."
                 },
                 {
                     "organization": "WAT.ai",
@@ -375,7 +385,8 @@
                             "required_skills": [],
                             "group": 0
                         }
-                    ]
+                    ],
+                    "long_description": "Developed a sophisticated algorithmic trading system using deep reinforcement learning techniques implemented in Python with TensorFlow and PyTorch frameworks. The model integrated multiple data sources including sentiment analysis, market price trends, and technical indicators to make autonomous trading decisions, demonstrating advanced machine learning applications in financial markets."
                 },
                 {
                     "organization": "Waterloo Data Science Club",
@@ -411,7 +422,8 @@
                             "required_skills": [],
                             "group": 0
                         }
-                    ]
+                    ],
+                    "long_description": "Served as VP of Data Analysis and Reading Group Lead, organizing and delivering educational content on machine learning and AI to over 100 club members through workshops and paper presentations covering neural networks, image processing, and NLP. Led a team of 5 analysts while also conducting applied research projects, including fine-tuning a distillBERT language model for Manifest Climate to extract key metrics from climate disclosure documents."
                 },
                 {
                     "organization": "TOHacks Executive Team",
@@ -431,7 +443,8 @@
                             "required_skills": [],
                             "group": 0
                         }
-                    ]
+                    ],
+                    "long_description": "Designed and developed the official TOHacks hackathon landing page using React.js and modern web technologies, creating an engaging user experience for the event's online presence. Built scalable frontend features and interactive components that successfully served over 10,000 visitors, contributing to the hackathon's digital infrastructure and participant engagement."
                 },
                 {
                     "organization": "EngHack 2021 (Winning Entry)",
@@ -452,7 +465,127 @@
                             "required_skills": [],
                             "group": 0
                         }
-                    ]
+                    ],
+                    "long_description": "Created a winning full-stack web application during a 36-hour hackathon competition, focusing on financial literacy education for children through interactive and engaging features. Utilized JavaScript, React.js, Node.js, and Mongoose to build a comprehensive platform that successfully combined educational content with user-friendly design, ultimately securing first place in the competition."
+                }
+            ]
+        },
+        {
+            "name": "projects",
+            "include": true,
+            "num_top_points": 3,
+            "items": [
+                {
+                    "name": "MyTorch",
+                    "source": "https://github.com/AbhiJ2706/mytorch",
+                    "core_skills": [
+                        "Python"
+                    ],
+                    "extra_skills": [
+                        "NumPy"
+                    ],
+                    "description": [
+                        {
+                            "summary": "Implemented a pure Python automatic differentiation engine (MyTorch) that replicates core functionality of PyTorch's autograd system.",
+                            "required_skills": ["Python"],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Developed tensor operations and backpropagation algorithms to enable training of machine learning models from scratch.",
+                            "required_skills": ["Python"],
+                            "group": 0
+                        }
+                    ],
+                    "long_description": "Developed MyTorch, a pure Python implementation of automatic differentiation that mirrors the core functionality of PyTorch's autograd system. Built a complete computational graph system with reverse-mode automatic differentiation, tensor operations, and backpropagation algorithms, enabling end-to-end neural network training capabilities from scratch without relying on existing ML libraries. Added examples of traditional machine learning and neural networks successfully trained using MyTorch."
+                },
+                {
+                    "name": "ML Algorithms",
+                    "source": "https://github.com/AbhiJ2706/ml_algos",
+                    "core_skills": [
+                        "Python"
+                    ],
+                    "extra_skills": [
+                        "NumPy",
+                        "Pandas"
+                    ],
+                    "description": [
+                        {
+                            "summary": "Implemented 15+ machine learning algorithms from scratch, including classification & regression models and ensemble methods.",
+                            "required_skills": ["Python", "NumPy", "Pandas"],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Built a complete neural network framework with multiple optimizers (SGD, Momentum, RMSProp, ADAM) and gradient descent variants.",
+                            "required_skills": ["Python", "NumPy"],
+                            "group": 0
+                        }
+                    ],
+                    "long_description": "Developed a comprehensive machine learning library implementing 15+ algorithms from scratch using only NumPy and Pandas. Built complete implementations ranging from basic perceptrons and linear regression to advanced techniques including kernel SVMs, ensemble methods (bagging, AdaBoost), and a full neural network framework with multiple optimization algorithms (SGD, Momentum, RMSProp, ADAM) and gradient descent variants."
+                },
+                {
+                    "name": "Audio to Sheet Music Converter",
+                    "source": "https://github.com/AbhiJ2706/cs489-project",
+                    "core_skills": [
+                        "Python",
+                        "TypeScript",
+                        "React"
+                    ],
+                    "extra_skills": [
+                        "Next.js",
+                        "FastAPI",
+                        "Tailwind CSS",
+                        "Librosa",
+                        "Music21"
+                    ],
+                    "description": [
+                        {
+                            "summary": "Built a full-stack web application that converts WAV audio files to sheet music in MusicXML and PDF formats using audio processing and music theory algorithms.",
+                            "required_skills": ["Python", "TypeScript", "React"],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Developed React/Next.js frontend with TypeScript featuring file upload, audio playback, sheet music preview, and interactive MusicXML viewer.",
+                            "required_skills": ["TypeScript", "React", "Next.js"],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Implemented FastAPI backend with Librosa for audio signal processing and Music21 for automated sheet music generation and notation.",
+                            "required_skills": ["Python", "FastAPI", "Librosa"],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Integrated OpenSheetMusicDisplay for browser-based sheet music rendering and supported files up to 100MB with automatic cleanup.",
+                            "required_skills": ["TypeScript"],
+                            "group": 0
+                        }
+                    ],
+                    "long_description": "Developed a comprehensive full-stack web application that automatically converts WAV audio files into professionally formatted sheet music, combining advanced audio signal processing with music theory algorithms to bridge the gap between audio and notation. Built a modern React/Next.js frontend with TypeScript featuring intuitive file upload, audio playback, and interactive sheet music preview capabilities, while implementing a robust FastAPI backend that leverages Librosa for audio analysis and Music21 for generating MusicXML and PDF sheet music formats."
+                },
+                {
+                    "name": "Snake Game Reinforcement Learning",
+                    "source": "https://github.com/AbhiJ2706/snake_game_reinforcement_learning",
+                    "core_skills": [
+                        "Python"
+                    ],
+                    "extra_skills": [],
+                    "description": [
+                        {
+                            "summary": "Implemented a Q-learning based reinforcement learning agent to autonomously play and master the classic Snake game.",
+                            "required_skills": ["Python"],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Developed complete game environment with state representation, action space, and reward system for RL training.",
+                            "required_skills": ["Python"],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Created visualization and training framework to demonstrate agent learning progression and performance metrics.",
+                            "required_skills": ["Python"],
+                            "group": 0
+                        }
+                    ],
+                    "long_description": "Developed a comprehensive reinforcement learning solution for the classic Snake game using Q-learning algorithms, representing a 3-year iterative development process that demonstrates deep understanding of RL fundamentals and game AI. Built the complete system from scratch including game environment design, state representation, reward engineering, and Q-learning implementation with exploration-exploitation strategies, creating an autonomous agent capable of mastering the game through trial-and-error learning."
                 }
             ]
         }
