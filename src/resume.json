@@ -18,7 +18,7 @@
             "degree_name": "Bachelor of Computer Science with AI Specialization (Honors, Co-op)",
             "start": "Sep 2020",
             "end": "May 2025",
-            "completed": false,
+            "completed": true,
             "institution": "University of Waterloo",
             "institution_location": "Waterloo, ON",
             "relevant_coursework": ""
@@ -45,17 +45,16 @@
                         "Python"
                     ],
                     "extra_skills": [
-                        "TensorFlow", 
                         "PyTorch"
                     ],
                     "description": [
                         {
-                            "summary": "Implementing a system to detect cryptocurrency pump-and-dump schemes using sentiment and price trend analysis.",
+                            "summary": "Employing Natural Language Processing (NLP) and time series analysis to analyze cryptocurrency pump-and-dump activity.",
                             "required_skills": [],
                             "group": 0
                         }
                     ],
-                    "long_description": "Currently working on developing an advanced detection system for cryptocurrency pump-and-dump schemes by leveraging machine learning techniques to analyze market sentiment and price patterns. This research involves implementing sophisticated algorithms using Python, TensorFlow, and PyTorch to identify fraudulent trading activities in cryptocurrency markets."
+                    "long_description": "Currently working on understanding and profiling cryptocurrency pump-and-dump schemes by leveraging NLP and time series analysis techniques to analyze coin metadata and price patterns. This research involves implementing algorithms using PyTorch to identify fraudulent trading activities in cryptocurrency markets."
                 },
                 {
                     "organization": "BetterUp",

@@ -106,6 +106,10 @@ const darkTheme = createTheme({
           border: `1px solid ${GREY}`, // gray-600/50
           borderRadius: '24px',
         },
+        sub: {
+            backgroundColor: "transparent", // gray-800/95
+            marginBottom: "100vh"
+        },
       },
     },
     MuiTextField: {
@@ -237,16 +241,21 @@ const Portfolio = () => {
         height: '100%', 
         display: 'flex', 
         flexDirection: 'column', 
-        width: '70vw',
-        maxWidth: '70vw',
+        width: { xs: '95vw', sm: '90vw', md: '80vw', lg: '70vw' },
+        maxWidth: { xs: '95vw', sm: '90vw', md: '80vw', lg: '70vw' },
         margin: '0 auto'
       }}>
-          <CardContent sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+          <CardContent sx={{ 
+            display: 'flex', 
+            flexDirection: 'column', 
+            height: '100%',
+            p: { xs: 2, sm: 3, md: 4 }
+          }}>
             {/* Header section - centered */}
-            <Box sx={{ textAlign: 'center', mb: 3 }}>
+            <Box sx={{ textAlign: 'center', mb: { xs: 2, sm: 3 } }}>
               {experience.name ? (
                 <Box sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 1 }}>
-                    <Typography variant="h6" component="h3" color="primary" fontWeight="bold" gutterBottom>
+                    <Typography variant="h6" component="h3" color="primary" fontWeight="bold" gutterBottom sx={{ fontSize: { xs: '1rem', sm: '1.25rem' } }}>
                         {experience.name}
                     </Typography>
                     <Link href={experience.source} underline="hover">
@@ -257,20 +266,20 @@ const Portfolio = () => {
                 <></>
               )}
 
-              <Typography variant="h6" component="h3" color="primary" fontWeight="bold" gutterBottom>
+              <Typography variant="h6" component="h3" color="primary" fontWeight="bold" gutterBottom sx={{ fontSize: { xs: '1rem', sm: '1.25rem' } }}>
                 {experience.organization}
               </Typography>
               
-              <Typography variant="h6" component="h4" color="text.primary" fontWeight="medium" gutterBottom>
+              <Typography variant="h6" component="h4" color="text.primary" fontWeight="medium" gutterBottom sx={{ fontSize: { xs: '0.9rem', sm: '1.1rem' } }}>
                 {experience.position}
               </Typography>
               
               {experience.start ? (
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 1 }}>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography variant="body2" color="text.secondary" sx={{ fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>
                         {experience.start} - {experience.end}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography variant="body2" color="text.secondary" sx={{ fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>
                         {experience.location}
                     </Typography>
                 </Box>
@@ -281,13 +290,17 @@ const Portfolio = () => {
             </Box>
 
             {/* Description section - left aligned */}
-            <Box sx={{ textAlign: 'left', mb: 3, flexGrow: 1 }}>
-              <Box component="ul" sx={{ pl: 2, m: 0 }}>
+            <Box sx={{ textAlign: 'left', mb: { xs: 2, sm: 3 }, flexGrow: 1 }}>
+              <Box component="ul" sx={{ pl: { xs: 1, sm: 2 }, m: 0 }}>
                 <Typography 
                     key={experience.organization} 
                     variant="body2" 
                     color="text.secondary" 
-                    sx={{ lineHeight: 1.6, mb: 1 }}
+                    sx={{ 
+                      lineHeight: 1.6, 
+                      mb: 1,
+                      fontSize: { xs: '0.875rem', sm: '1rem' }
+                    }}
                     >
                     {experience.long_description}
                 </Typography>
@@ -296,7 +309,7 @@ const Portfolio = () => {
 
             {/* Skills section - left aligned, at bottom */}
             <Box sx={{ textAlign: 'left', mt: 'auto' }}>
-              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 2 }}>
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: { xs: 0.5, sm: 1 }, mb: 2 }}>
                 {experience.core_skills.concat(experience.extra_skills).map((skill, idx) => (
                   <Button
                     key={idx}
@@ -304,13 +317,14 @@ const Portfolio = () => {
                     size="small"
                     onClick={() => handleSkillClick(skill)}
                     sx={{
-                      fontSize: '0.75rem',
+                      fontSize: { xs: '0.65rem', sm: '0.75rem' },
                       borderRadius: '20px',
                       backgroundColor: 'rgba(55, 65, 81, 0.8)', // gray-700/80
                       backdropFilter: 'blur(8px)',
                       border: '1px solid rgba(107, 114, 128, 0.4)', // gray-500/40
                       color: '#e5e7eb', // gray-200
                       transition: 'all 0.3s ease',
+                      padding: { xs: '2px 6px', sm: '4px 8px' },
                       '&:hover': {
                         background: GREEN,
                         color: 'white',
@@ -336,30 +350,65 @@ const Portfolio = () => {
         sx={{
           minHeight: '100vh',
           backgroundColor: 'background.default',
-          py: 4,
+          py: { xs: 2, sm: 3, md: 4 },
+          px: { xs: 1, sm: 2, md: 3 },
+          width: '100%',
+          margin: 0,
+          overflow: 'hidden',
         }}
       >
-        <Container maxWidth="xl">
+        <Container 
+          maxWidth="xl" 
+          sx={{
+            px: { xs: 1, sm: 2, md: 3 },
+            mx: 'auto',
+            width: '100%',
+            maxWidth: '100%',
+          }}
+        >
 
           {/* About Me Section */}
           <Fade in={true} timeout={1000}>
-            <Paper elevation={1} sx={{ p: 4, mb: 4 }}>
-              <Typography variant="h1" component="h1" sx={{ fontSize: { xs: '2.5rem', md: '3.5rem' }, mb: 2 }}>
+            <Paper elevation={1} sx={{ 
+              p: { xs: 2, sm: 3, md: 4 }, 
+              mb: { xs: 2, sm: 3, md: 4 },
+              mx: { xs: 0, sm: 1, md: 2 }
+            }} class="MuiPaper-sub">
+              <Typography variant="h1" component="h1" sx={{ 
+                fontSize: { xs: '2rem', sm: '2.5rem', md: '3.5rem' }, 
+                mb: 2,
+                wordBreak: 'break-word'
+              }}>
                 {ResumeData.info.firstname + ' ' + ResumeData.info.lastname}
               </Typography>
-              <Typography variant="h5" color="text.secondary" sx={{ mb: 4 }}>
+              <Typography variant="h5" color="text.secondary" sx={{ 
+                mb: { xs: 2, sm: 3, md: 4 },
+                fontSize: { xs: '1.1rem', sm: '1.25rem', md: '1.5rem' }
+              }}>
                 Software Engineer & AI/ML Developer
               </Typography>
-              <Typography variant="body1" sx={{ mb: 2, fontSize: '1.125rem', lineHeight: 1.7 }}>
-                Welcome to my portfolio! I'm a passionate software enginner with expertise in AI/ML, 
+              <Typography variant="body1" sx={{ 
+                mb: 2, 
+                fontSize: { xs: '1rem', sm: '1.125rem' }, 
+                lineHeight: 1.7,
+                textAlign: { xs: 'left', sm: 'center' }
+              }}>
+                Welcome to my portfolio! I'm a passionate software engineer with expertise in AI/ML, 
                 full-stack development, and embedded development. I love building innovative solutions and 
-                contributing to cutting-edge research projects. Currently I am working at Amazon as an SDE 1 in the Ads division!
+                contributing to cutting-edge research projects.
               </Typography>
-              <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
+              <Box sx={{ 
+                display: 'flex', 
+                gap: { xs: 1, sm: 2 }, 
+                justifyContent: 'center', 
+                flexWrap: 'wrap',
+                mt: { xs: 2, sm: 3 }
+              }}>
                 <Button
                   href="https://github.com/abhij2706"
                   target="_blank"
                   rel="noopener noreferrer"
+                  sx={{ minWidth: 'auto' }}
                 >
                   <GitHubIcon fontSize='large'></GitHubIcon>
                 </Button>
@@ -367,17 +416,19 @@ const Portfolio = () => {
                 <Button
                   href="https://linkedin.com/in/abhij2706"
                   target="_blank"
+                  sx={{ minWidth: 'auto' }}
                 >
                   <LinkedInIcon fontSize='large'/>
                 </Button>
                 
                 <Button
                   href="mailto:a252jain@uwaterloo.ca"
+                  sx={{ minWidth: 'auto' }}
                 >
                   <EmailIcon fontSize='large'/>
                 </Button>
 
-                <Button>
+                <Button sx={{ minWidth: 'auto' }}>
                   <TwitterIcon fontSize='large'/>
                 </Button>
               </Box>
@@ -386,9 +437,19 @@ const Portfolio = () => {
 
           {/* Search Section */}
           <Fade in={true} timeout={1200}>
-            <Paper elevation={1} sx={{ p: 4, mb: 4 }}>
-              <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.7, marginBottom: '3vh' }}>
-                Use the search below to explore my experience and extracurriculars by skills, organizations, or any keywords that interest you. Or, scroll down to see all my experience!
+            <Paper elevation={1} sx={{ 
+              p: { xs: 2, sm: 3, md: 4 }, 
+              mb: { xs: 2, sm: 3, md: 4 }, 
+              marginTop: { xs: "2vh", sm: "3vh", md: "5vh" },
+              mx: { xs: 0, sm: 1, md: 2 }
+            }}>
+              <Typography variant="body1" color="text.secondary" sx={{ 
+                lineHeight: 1.7, 
+                marginBottom: { xs: '2vh', sm: '2.5vh', md: '3vh' },
+                fontSize: { xs: '0.9rem', sm: '1rem', md: '1.125rem' },
+                textAlign: { xs: 'left', sm: 'center' }
+              }}>
+                Use the search below to explore my experience, extracurriculars and projects by skill or any keywords that interest you. Or, scroll down to see all my work!
               </Typography>
               <TextField
                 fullWidth
@@ -403,10 +464,19 @@ const Portfolio = () => {
                     </InputAdornment>
                   ),
                 }}
-                sx={{ mb: 3, fontSize: '1.125rem', input: { color: "#fff" }}}
+                sx={{ 
+                  mb: { xs: 2, sm: 3 }, 
+                  fontSize: { xs: '1rem', sm: '1.125rem' }, 
+                  input: { color: "#fff" }
+                }}
               />
               
-              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+              <Box sx={{ 
+                display: 'flex', 
+                flexWrap: 'wrap', 
+                gap: { xs: 0.5, sm: 1 },
+                justifyContent: { xs: 'center', sm: 'flex-start' }
+              }}>
                 {allSkills.map((skill, idx) => (
                   <Button
                     key={idx}
@@ -420,6 +490,8 @@ const Portfolio = () => {
                       border: '1px solid rgba(107, 114, 128, 0.4)', // gray-500/40
                       color: '#e5e7eb', // gray-200
                       transition: 'all 0.3s ease',
+                      fontSize: { xs: '0.75rem', sm: '0.875rem' },
+                      padding: { xs: '4px 8px', sm: '6px 12px' },
                       '&:hover': {
                         background: GREEN,
                         color: 'white',
@@ -436,12 +508,12 @@ const Portfolio = () => {
                 value={activeTab} 
                 onChange={handleTabChange}
                 sx={{ 
-                    px: 4, 
+                    px: { xs: 2, sm: 3, md: 4 }, 
                     pt: 2,
                     '& .MuiTab-root': {
                     color: '#9ca3af',
                     fontWeight: 'medium',
-                    fontSize: '1.125rem',
+                    fontSize: { xs: '0.875rem', sm: '1rem', md: '1.125rem' },
                     '&.Mui-selected': {
                         color: BLUE,
                     },
@@ -463,7 +535,7 @@ const Portfolio = () => {
           {activeTab === 0 ? (
             // Experience Tab
             filteredExperienceData.length > 0 ? (
-              <Grid container spacing={3} sx={{ justifyContent: 'center' }}>
+              <Grid container spacing={{ xs: 2, sm: 3 }} sx={{ justifyContent: 'center' }}>
                 {filteredExperienceData.map((experience, index) => (
                   <Grid item xs={12} key={index}>
                     <ExperienceCard experience={experience} index={index} />
@@ -476,11 +548,12 @@ const Portfolio = () => {
                   elevation={20} 
                   sx={{ 
                     textAlign: 'center', 
-                    py: 8, 
-                    px: 4,
+                    py: { xs: 4, sm: 6, md: 8 }, 
+                    px: { xs: 2, sm: 3, md: 4 },
+                    mx: { xs: 0, sm: 1, md: 2 }
                   }}
                 >
-                  <Typography variant="h5" color="text.secondary">
+                  <Typography variant="h5" color="text.secondary" sx={{ fontSize: { xs: '1.1rem', sm: '1.25rem', md: '1.5rem' } }}>
                     No experiences match your search criteria
                   </Typography>
                 </Paper>
@@ -489,7 +562,7 @@ const Portfolio = () => {
           ) : activeTab === 1 ? (
             // Extracurriculars Tab
             filteredExtracurricularData.length > 0 ? (
-              <Grid container spacing={3} sx={{ justifyContent: 'center' }}>
+              <Grid container spacing={{ xs: 2, sm: 3 }} sx={{ justifyContent: 'center' }}>
                 {filteredExtracurricularData.map((experience, index) => (
                   <Grid item xs={12} key={index}>
                     <ExperienceCard experience={experience} index={index} />
@@ -502,20 +575,21 @@ const Portfolio = () => {
                   elevation={20} 
                   sx={{ 
                     textAlign: 'center', 
-                    py: 8, 
-                    px: 4,
+                    py: { xs: 4, sm: 6, md: 8 }, 
+                    px: { xs: 2, sm: 3, md: 4 },
+                    mx: { xs: 0, sm: 1, md: 2 }
                   }}
                 >
-                  <Typography variant="h5" color="text.secondary">
+                  <Typography variant="h5" color="text.secondary" sx={{ fontSize: { xs: '1.1rem', sm: '1.25rem', md: '1.5rem' } }}>
                     No extracurriculars match your search criteria
                   </Typography>
                 </Paper>
               </Fade>
             )
           ) : (
-            // Extracurriculars Tab
+            // Projects Tab
             filteredProjectsData.length > 0 ? (
-                <Grid container spacing={3} sx={{ justifyContent: 'center' }}>
+                <Grid container spacing={{ xs: 2, sm: 3 }} sx={{ justifyContent: 'center' }}>
                     {filteredProjectsData.map((experience, index) => (
                     <Grid item xs={12} key={index}>
                         <ExperienceCard experience={experience} index={index} />
@@ -528,12 +602,13 @@ const Portfolio = () => {
                     elevation={20} 
                     sx={{ 
                         textAlign: 'center', 
-                        py: 8, 
-                        px: 4,
+                        py: { xs: 4, sm: 6, md: 8 }, 
+                        px: { xs: 2, sm: 3, md: 4 },
+                        mx: { xs: 0, sm: 1, md: 2 }
                     }}
                     >
-                    <Typography variant="h5" color="text.secondary">
-                        No extracurriculars match your search criteria
+                    <Typography variant="h5" color="text.secondary" sx={{ fontSize: { xs: '1.1rem', sm: '1.25rem', md: '1.5rem' } }}>
+                        No projects match your search criteria
                     </Typography>
                     </Paper>
                 </Fade>

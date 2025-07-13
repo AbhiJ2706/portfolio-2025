@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #070a0a;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow-x: hidden;
 }
 
 .App-logo {
@@ -22,6 +29,10 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
 
 .App-link {
@@ -34,5 +45,42 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .App {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  .App-header {
+    padding: 16px;
+    min-height: 100vh;
+    width: 100vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .App-header {
+    padding: 8px;
+    width: 100vw;
+  }
+  
+  .App {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+}
+
+/* Ensure background extends to all edges */
+@media (min-width: 1200px) {
+  .App {
+    background-color: #070a0a;
+    width: 100%;
   }
 }
