@@ -32,7 +32,7 @@ const BLUE = "#1e40af"
 const LIGHT_GREY = "#f5f5f5"
 const WHITE = "#ffffff"
 const DARK_GREY = "#333333"
-const GREEN = "linear-gradient(45deg, #10b981, #059669)"
+const NAVY_GRADIENT = "linear-gradient(45deg, #1e40af, #1e3a8a)"
 
 // Light theme configuration
 const lightTheme = createTheme({
@@ -58,7 +58,7 @@ const lightTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: ['Nunito Sans', '-apple-system', 'BlinkMacSystemFont'].join(","),
+    fontFamily: ['Roboto', '-apple-system', 'BlinkMacSystemFont'].join(","),
     h1: {
       fontWeight: 700,
       background: BLUE,
@@ -329,7 +329,7 @@ const Portfolio = () => {
                       transition: 'all 0.3s ease',
                       padding: { xs: '2px 6px', sm: '4px 8px' },
                       '&:hover': {
-                        background: GREEN,
+                        background: NAVY_GRADIENT,
                         color: 'white',
                         transform: 'scale(1.05)',
                         border: '1px solid transparent',
@@ -496,7 +496,7 @@ const Portfolio = () => {
                       fontSize: { xs: '0.75rem', sm: '0.875rem' },
                       padding: { xs: '4px 8px', sm: '6px 12px' },
                       '&:hover': {
-                        background: GREEN,
+                        background: NAVY_GRADIENT,
                         color: 'white',
                         transform: 'scale(1.05)',
                         border: '1px solid transparent',
