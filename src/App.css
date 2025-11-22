@@ -2,7 +2,7 @@
   text-align: center;
   min-height: 100vh;
   width: 100%;
-  background-color: #070a0a;
+  background-color: #ffffff;
   margin: 0;
   padding: 0;
   position: relative;
@@ -80,7 +80,7 @@
 /* Ensure background extends to all edges */
 @media (min-width: 1200px) {
   .App {
-    background-color: #070a0a;
+    background-color: #ffffff;
     width: 100%;
   }
 }

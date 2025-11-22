@@ -28,36 +28,37 @@ import { Search } from 'lucide-react';
 // import Figtree from '/fonts/Figtree-Medium.ttf';
 import ResumeData from './resume.json'
 
-const BLUE = "#47c2f3"
-const GREY = "#101414"
-const BLACK = "#070a0a"
+const BLUE = "#1e40af"
+const LIGHT_GREY = "#f5f5f5"
+const WHITE = "#ffffff"
+const DARK_GREY = "#333333"
 const GREEN = "linear-gradient(45deg, #10b981, #059669)"
 
-// Dark theme configuration
-const darkTheme = createTheme({
+// Light theme configuration
+const lightTheme = createTheme({
   palette: {
-    mode: 'dark',
+    mode: 'light',
     primary: {
-      main: BLUE, // purple-400
-      light: BLUE, // purple-300
-      dark: BLUE, // purple-600
+      main: BLUE,
+      light: BLUE,
+      dark: BLUE,
     },
     secondary: {
-      main: BLUE, // blue-400
-      light: BLUE, // blue-300
-      dark: BLUE, // blue-500
+      main: BLUE,
+      light: BLUE,
+      dark: BLUE,
     },
     background: {
-      default: BLACK, // gray-900
-      paper: GREY, // gray-800/95
+      default: WHITE,
+      paper: LIGHT_GREY,
     },
     text: {
-      primary: '#e5e7eb', // gray-200
-      secondary: '#9ca3af', // gray-400
+      primary: DARK_GREY,
+      secondary: '#666666',
     },
   },
   typography: {
-    fontFamily: ['Figtree', '-apple-system', 'BlinkMacSystemFont'].join(","),
+    fontFamily: ['Nunito Sans', '-apple-system', 'BlinkMacSystemFont'].join(","),
     h1: {
       fontWeight: 700,
       background: BLUE,
@@ -87,13 +88,14 @@ const darkTheme = createTheme({
       styleOverrides: {
         root: {
           backdropFilter: 'blur(16px)',
-          backgroundColor: GREY, // gray-800/95
-          border: `1px solid ${GREY}`, // gray-600/50
+          backgroundColor: WHITE,
+          border: `1px solid #e0e0e0`,
           borderRadius: '24px',
           transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
           '&:hover': {
             transform: 'translateY(-8px) scale(1.02)',
-            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.4)',
+            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15)',
           },
         },
       },
@@ -102,12 +104,13 @@ const darkTheme = createTheme({
       styleOverrides: {
         root: {
           backdropFilter: 'blur(16px)',
-          backgroundColor: GREY, // gray-800/95
-          border: `1px solid ${GREY}`, // gray-600/50
+          backgroundColor: WHITE,
+          border: `1px solid #e0e0e0`,
           borderRadius: '24px',
+          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
         },
         sub: {
-            backgroundColor: "transparent", // gray-800/95
+            backgroundColor: "transparent",
             marginBottom: "100vh"
         },
       },
@@ -117,22 +120,22 @@ const darkTheme = createTheme({
         root: {
           '& .MuiOutlinedInput-root': {
             borderRadius: '16px',
-            backgroundColor: GREY, // gray-700/90
+            backgroundColor: LIGHT_GREY,
             backdropFilter: 'blur(8px)',
             transition: 'all 0.3s ease',
-            color: GREY, // gray-200
+            color: DARK_GREY,
             '& fieldset': {
-              borderColor: GREY, // gray-500/40
+              borderColor: '#d0d0d0',
             },
             '&:hover fieldset': {
-              borderColor: BLUE, // purple-400/60
+              borderColor: BLUE,
             },
             '&.Mui-focused fieldset': {
-              borderColor: BLUE, // purple-400
+              borderColor: BLUE,
             },
           },
           '& .MuiInputBase-input::placeholder': {
-            color: GREY, // gray-400
+            color: '#999999',
             opacity: 1,
           },
         },
@@ -258,7 +261,7 @@ const Portfolio = () => {
                     <Typography variant="h6" component="h3" color="primary" fontWeight="bold" gutterBottom sx={{ fontSize: { xs: '1rem', sm: '1.25rem' } }}>
                         {experience.name}
                     </Typography>
-                    <Link href={experience.source} underline="hover">
+                    <Link href={experience.source} underline="hover" sx={{ color: DARK_GREY, '&:hover': { color: BLUE } }}>
                         <LaunchIcon fontSize='small' />
                     </Link>
                 </Box>
@@ -319,10 +322,10 @@ const Portfolio = () => {
                     sx={{
                       fontSize: { xs: '0.65rem', sm: '0.75rem' },
                       borderRadius: '20px',
-                      backgroundColor: 'rgba(55, 65, 81, 0.8)', // gray-700/80
+                      backgroundColor: LIGHT_GREY,
                       backdropFilter: 'blur(8px)',
-                      border: '1px solid rgba(107, 114, 128, 0.4)', // gray-500/40
-                      color: '#e5e7eb', // gray-200
+                      border: '1px solid #d0d0d0',
+                      color: DARK_GREY,
                       transition: 'all 0.3s ease',
                       padding: { xs: '2px 6px', sm: '4px 8px' },
                       '&:hover': {
@@ -345,7 +348,7 @@ const Portfolio = () => {
   );
 
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={lightTheme}>
       <Box
         sx={{
           minHeight: '100vh',
@@ -387,7 +390,7 @@ const Portfolio = () => {
               }}>
                 Software Engineer & AI/ML Developer
               </Typography>
-              <Typography variant="body1" sx={{ 
+              <Typography variant="body1" color="text.primary" sx={{ 
                 mb: 2, 
                 fontSize: { xs: '1rem', sm: '1.125rem' }, 
                 lineHeight: 1.7,
@@ -408,7 +411,7 @@ const Portfolio = () => {
                   href="https://github.com/abhij2706"
                   target="_blank"
                   rel="noopener noreferrer"
-                  sx={{ minWidth: 'auto' }}
+                  sx={{ minWidth: 'auto', color: DARK_GREY, '&:hover': { color: BLUE } }}
                 >
                   <GitHubIcon fontSize='large'></GitHubIcon>
                 </Button>
@@ -416,19 +419,19 @@ const Portfolio = () => {
                 <Button
                   href="https://linkedin.com/in/abhij2706"
                   target="_blank"
-                  sx={{ minWidth: 'auto' }}
+                  sx={{ minWidth: 'auto', color: DARK_GREY, '&:hover': { color: BLUE } }}
                 >
                   <LinkedInIcon fontSize='large'/>
                 </Button>
                 
                 <Button
                   href="mailto:a252jain@uwaterloo.ca"
-                  sx={{ minWidth: 'auto' }}
+                  sx={{ minWidth: 'auto', color: DARK_GREY, '&:hover': { color: BLUE } }}
                 >
                   <EmailIcon fontSize='large'/>
                 </Button>
 
-                <Button sx={{ minWidth: 'auto' }}>
+                <Button sx={{ minWidth: 'auto', color: DARK_GREY, '&:hover': { color: BLUE } }}>
                   <TwitterIcon fontSize='large'/>
                 </Button>
               </Box>
@@ -464,10 +467,10 @@ const Portfolio = () => {
                     </InputAdornment>
                   ),
                 }}
-                sx={{ 
+                  sx={{ 
                   mb: { xs: 2, sm: 3 }, 
                   fontSize: { xs: '1rem', sm: '1.125rem' }, 
-                  input: { color: "#fff" }
+                  input: { color: DARK_GREY }
                 }}
               />
               
@@ -485,10 +488,10 @@ const Portfolio = () => {
                     onClick={() => handleSkillClick(skill)}
                     sx={{
                       borderRadius: '20px',
-                      backgroundColor: 'rgba(55, 65, 81, 0.8)', // gray-700/80
+                      backgroundColor: LIGHT_GREY,
                       backdropFilter: 'blur(8px)',
-                      border: '1px solid rgba(107, 114, 128, 0.4)', // gray-500/40
-                      color: '#e5e7eb', // gray-200
+                      border: '1px solid #d0d0d0',
+                      color: DARK_GREY,
                       transition: 'all 0.3s ease',
                       fontSize: { xs: '0.75rem', sm: '0.875rem' },
                       padding: { xs: '4px 8px', sm: '6px 12px' },
@@ -511,7 +514,7 @@ const Portfolio = () => {
                     px: { xs: 2, sm: 3, md: 4 }, 
                     pt: 2,
                     '& .MuiTab-root': {
-                    color: '#9ca3af',
+                    color: '#666666',
                     fontWeight: 'medium',
                     fontSize: { xs: '0.875rem', sm: '1rem', md: '1.125rem' },
                     '&.Mui-selected': {
