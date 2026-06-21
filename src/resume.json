@@ -35,6 +35,42 @@
             "num_top_points": 3,
             "items": [
                 {
+                    "organization": "Amazon",
+                    "location": "Toronto, ON",
+                    "position": "Software Development Engineer I",
+                    "domain": "Software Engineering",
+                    "start": "July 2025",
+                    "end": "Present",  
+                    "core_skills": [
+                        "Kotlin",
+                        "Typescript",
+                        "Python"
+                    ],
+                    "extra_skills": [
+                        "LLMs",
+                        "AWS",
+                        "React.js"
+                    ],
+                    "description": [
+                        {
+                            "summary": "Implemented an LLM-based asynchronous workflow to injest advertiser agreements into Amazon's sales management system, reducing manual effort for 1000+ employees and 50% of new documents.",
+                            "required_skills": ["Kotlin", "Typescript", "AWS"],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Created an agentic tool to build advertiser sales campaigns, eliminating manual work for audience research and inventory plan optimization, and reducing campaign building time by 90%",
+                            "required_skills": ["Kotlin", "Typescript", "AWS"],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Optimized APIs for Amazon's sales management system, reducing latency by 90% and making them safer and easier to use for downstream services.",
+                            "required_skills": ["Kotlin", "Typescript"],
+                            "group": 0
+                        }
+                    ],
+                    "long_description": "Implemented an asynchronous workflow system that ingests advertiser agreements into Amazon's sales management platform, eliminating manual work for over 1000 employees and processing 50% of new documents automatically. Created an agentic tool that automates advertiser sales campaign creation by handling audience research and inventory plan optimization, reducing campaign building time by 90%. Additionally, optimized core APIs for the sales management system, achieving 90% latency reduction while improving safety and usability for downstream services."
+                },
+                {
                     "organization": "University of Waterloo",
                     "location": "Waterloo, ON",
                     "position": "Undergraduate Research Assistant",
@@ -166,7 +202,7 @@
                 {
                     "organization": "Qualcomm",
                     "location": "Toronto, ON",
-                    "position": "AI Performance Analysis Intern",
+                    "position": "Software Engineering Intern",
                     "domain": "Data Engineering",
                     "start": "August 2023",
                     "end": "December 2023",
@@ -202,7 +238,7 @@
                             "group": 0
                         }
                     ],
-                    "long_description": "Architected and developed a comprehensive software profiling pipeline using Python and Bash to analyze CNN performance on Snapdragon processors, achieving over 500% improvement in analysis tool efficiency and enabling precise nanosecond-level performance monitoring. Created sophisticated data management systems including caching mechanisms and time-based search engines that could handle datasets with 50,000+ data points, significantly enhancing Qualcomm's ability to optimize AI workloads on mobile hardware."
+                    "long_description": "Designed and developed a comprehensive software profiling pipeline using Python and Bash to analyze CNN performance on Snapdragon processors, achieving over 500% improvement in analysis tool efficiency and enabling precise nanosecond-level performance monitoring. Created sophisticated data management systems including caching mechanisms and time-based search engines that could handle datasets with 50,000+ data points, significantly enhancing Qualcomm's ability to optimize AI workloads on mobile hardware."
                 },
                 {
                     "organization": "Qualcomm",
@@ -527,7 +563,7 @@
                     "core_skills": [
                         "Python",
                         "TypeScript",
-                        "React"
+                        "React.js"
                     ],
                     "extra_skills": [
                         "Next.js",

@@ -1,0 +1,51 @@
+{
+  "notebookOverrides": {
+    "example.ipynb": {
+      "date": null,
+      "title": null,
+      "description": null
+    },
+    "SnakeRL.ipynb": {
+      "date": "2022-11-16T22:16:29.036Z",
+      "title": "My Computer Plays Games for me (Part 1)",
+      "description": "Teaching a computer to play Snake using Q learning."
+    },
+    "pandas_numpy.ipynb": {
+        "date": "2023-06-23",
+        "title": "Intro to ML Part 1: Pandas and Numpy",
+        "description": "Written before LLMs could do all this for us, a deep dive into the basics of Pandas and Numpy for a data scientist/engineer starting out in ML."
+    },
+    "preprocessing_matplotlib.ipynb": {
+        "date": "2023-07-08",
+        "title": "Intro to ML Part 2: Preprocessing and Visualization",
+        "description": "Written before LLMs could do all this for us, a deep dive into the basics of preprocessing and examining datasets numerically and visually, for a data scientist/engineer starting out in ML."
+    },
+    "machine_learning.ipynb": {
+        "date": "2023-08-15",
+        "title": "Intro to ML Part 3: Building and Evaluating Models",
+        "description": "Written before LLMs could do all this for us, a deep dive into building models for time series forecasting, for a data scientist/engineer starting out in ML."
+    },
+    "editor_1.ipynb": {
+        "date": "2026-02-22",
+        "title": "Making Photos Look Good is Easy, Actually (Part 1)",
+        "description": "I'm building a photo editor from scratch in vanilla Python. Come learn with me!"
+    },
+    "SnakeRL2.ipynb": {
+      "date": "2026-03-14",
+      "title": "My Computer Plays Games for me (Part 2)",
+      "description": "A deep dive into deep Q learning and various neural network architectures!"
+    },
+    "editor_2.ipynb": {
+        "date": "2026-04-19",
+        "title": "Making Photos Look Good is Easy, Actually (Part 2)",
+        "description": "Learning color grading like a pro using Python! "
+    },
+    "pan_it.ipynb": {
+        "date": "2026-05-19",
+        "title": "Making Photos Look Good is Easy, Actually (Part 2)",
+        "description": "Learning color grading like a pro using Python! "
+    }
+  },
+  "comment": "Override metadata for notebooks. Use null to use auto-generated values, or provide custom values:\n- date: ISO date string (e.g., '2024-01-08T22:16:29.036Z') or null to use file modification date\n- title: Custom title string or null to auto-extract from notebook\n- description: Custom description/blurb text or null to auto-extract from notebook"
+}
+

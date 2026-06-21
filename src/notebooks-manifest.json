@@ -1,0 +1,47 @@
+{
+  "notebooks": [
+    {
+      "filename": "editor_2.ipynb",
+      "title": "Making Photos Look Good is Easy, Actually (Part 2)",
+      "lastModified": "2026-04-19",
+      "description": "Learning color grading like a pro using Python! "
+    },
+    {
+      "filename": "SnakeRL2.ipynb",
+      "title": "My Computer Plays Games for me (Part 2)",
+      "lastModified": "2026-03-14",
+      "description": "A deep dive into deep Q learning and various neural network architectures!"
+    },
+    {
+      "filename": "editor_1.ipynb",
+      "title": "Making Photos Look Good is Easy, Actually (Part 1)",
+      "lastModified": "2026-02-22",
+      "description": "I'm building a photo editor from scratch in vanilla Python. Come learn with me!"
+    },
+    {
+      "filename": "machine_learning.ipynb",
+      "title": "Intro to ML Part 3: Building and Evaluating Models",
+      "lastModified": "2023-08-15",
+      "description": "Written before LLMs could do all this for us, a deep dive into building models for time series forecasting, for a data scientist/engineer starting out in ML."
+    },
+    {
+      "filename": "preprocessing_matplotlib.ipynb",
+      "title": "Intro to ML Part 2: Preprocessing and Visualization",
+      "lastModified": "2023-07-08",
+      "description": "Written before LLMs could do all this for us, a deep dive into the basics of preprocessing and examining datasets numerically and visually, for a data scientist/engineer starting out in ML."
+    },
+    {
+      "filename": "pandas_numpy.ipynb",
+      "title": "Intro to ML Part 1: Pandas and Numpy",
+      "lastModified": "2023-06-23",
+      "description": "Written before LLMs could do all this for us, a deep dive into the basics of Pandas and Numpy for a data scientist/engineer starting out in ML."
+    },
+    {
+      "filename": "SnakeRL.ipynb",
+      "title": "My Computer Plays Games for me (Part 1)",
+      "lastModified": "2022-11-16T22:16:29.036Z",
+      "description": "Teaching a computer to play Snake using Q learning."
+    }
+  ],
+  "generatedAt": "2026-06-20T20:54:45.891Z"
+}
